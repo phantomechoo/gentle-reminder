@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gentle Reminder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        font-family: "Italiana", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 693px;
+        height: 496px;
+        background-color: #FFEDFA;
+        border: 3px solid #FFE5F8;
+        border-radius: 29px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .header h1 {
+        margin-left: 15px;
+        font-size: 28px;
+        font-weight: 100;
+        color: #FFB8E0;
+    }
+
+    .header img {
+        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .inner-container {
+        background-color: white;
+        border: 3px solid #FFE5F8;
+        border-radius: 35px;
+        height: 414px;
+        width: 652px;
+        margin: 0 auto;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .content img {
+        width: 130px;
+        height: 130px;
+        margin-top: 30px;
+    }
+
+    #text {
+        font-size: 22px;
+        font-weight: 100;
+        color: #FFB8E0;
+    }
+
+    #btn {
+        width: 197px;
+        height: 54px;
+        background-color: #FFEDFA;
+        color: #FFB8E0;
+        font-family: "Italiana", sans-serif;
+        font-weight: 100;
+        border: 3px solid #FFE5F8;
+        border-radius: 18px;
+        font-size: 20px;
+        transition:  0.3s ease;
+    }
+
+    #btn:hover {
+        box-shadow: 0 4px 8px 0 #FFEDFA,
+        0 6px 20px 0 #FFE5F8;
+        background-color: #ffceea;
+        color: white;
+    }
+
+    @media screen and (max-width: 600px){
+        .container {
+            width: 430px;
+        }
+
+        .inner-container {
+            width: 400px;
+        }
+         
+        h1 {
+            text-align: center;
+            padding: 8px;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gentle Reminder</h1>
+            <img src="./close.svg" alt="">
+        </div>
+        
+        <div class="inner-container">
+            <div class="content">
+                <img src="./resim.svg" alt="">
+                <h2 id="text">Everything will be alright.</h2>
+                <button id="btn">Okay</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const reminders = ["Be gentle with yourself you're doing the best you can. ⋆˙⟡",
+            "Everything will be alright.", "You are doing the best you can. Things will get better soon. ♡",
+            "Take control of your life. No one else is going to do it for you. ☁︎", 
+            "Stay calm and carry on. ✿" , "Fear is just a feeling.", "Even hard days make you shine. ✰", "The best investment is in yourself. ༝༚༝༚"
+        ]
+        const btn = document.getElementById("btn");
+        const h2 = document.getElementById("text");
+
+        
+
+        btn.addEventListener("click", () => {
+            let randomReminder = Math.floor(Math.random() * reminders.length);
+
+            let newRandomReminder = reminders[randomReminder];
+            h2.textContent = newRandomReminder;
+        });
+
+    </script>
+</body>
+</html>
